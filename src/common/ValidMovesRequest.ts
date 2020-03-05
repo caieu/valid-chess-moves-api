@@ -1,4 +1,4 @@
 export default interface ValidMovesRequest {
-    turns?: number,
+    turns: number,
     position: string
 }
