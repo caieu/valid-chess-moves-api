@@ -1,17 +1,14 @@
 import { Router } from 'express'
 import MovesFinder from '../common/MovesFinder'
 import ValidMovesResponse from '../common/ValidMovesResponse'
+import Knight from '../services/knight'
 
 const routes = Router()
 
-routes.get('/validMoves/:piece', async (req, res) => {
-  const piece: string = req.params.piece
-  if (!piece) {
-    res.status(404).send({ error: 'You must inform the piece' })
-  }
+routes.get('/knight', async (req, res) => {
   try {
-    const validMovesFinder: MovesFinder = (await import(`../services/${piece}`)).default
-    const response: ValidMovesResponse = validMovesFinder.ValidMoves(req.query)
+    const validMovesFinder: MovesFinder = new Knight(req.query)
+    const response: ValidMovesResponse = validMovesFinder.ValidMoves()
     res.send(response)
   } catch (e) {
     res.status(400).send({ error: e.message })
