@@ -9,7 +9,7 @@ class Knight extends MovesFinder {
     const response: ValidMovesResponse = { positions: [] }
     super.validateRequest(request)
     let possibleMoves = [AlgebraicToMatrix(request.position)]
-    for (let index = 0; index < request.turns; index++) {
+    for (let index = 0; index < 2; index++) {
       let totalPossibleMoves: number[][] = []
       possibleMoves.forEach(possibleMove => {
         totalPossibleMoves = totalPossibleMoves.concat(this.getPossibleMoves(possibleMove))
