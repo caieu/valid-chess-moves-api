@@ -22,18 +22,14 @@ describe('Move model', () => {
   })
 
   it('Should save a Move', async () => {
-    expect.assertions(3)
-
     const move: Move = await new MoveModel({
       turns: 1,
       position: 'A',
       positions: ['B3', 'C2']
     })
     const spy = jest.spyOn(move, 'save')
-    move.save()
-
+    await move.save()
     expect(spy).toHaveBeenCalled()
-
     expect(move).toMatchObject({
       turns: expect.any(Number),
       position: expect.any(String),
