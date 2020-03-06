@@ -21,16 +21,16 @@ describe('AlgebraicHelper', () => {
       }
     })
   })
-  describe('ArrayMatrixPositionsToAlgebraic', () => {
-    it('must return a list with all algebraic positions possibles in a 8x8 board chess', () => {
-      expect(ArrayMatrixPositionsToAlgebraic(matrixPositions)).toStrictEqual(algebraicPositions)
-    })
-  })
   describe('AlgebraicToMatrix', () => {
     it('must convert from algebraic position to matrix position', () => {
       for (let index = 0; index < algebraicPositions.length; index++) {
         expect(AlgebraicToMatrix(algebraicPositions[index])).toStrictEqual(matrixPositions[index])
       }
+    })
+  })
+  describe('ArrayMatrixPositionsToAlgebraic', () => {
+    it('must return a list with all possibles algebraic positions in a 8x8 board chess', () => {
+      expect(ArrayMatrixPositionsToAlgebraic(matrixPositions)).toStrictEqual(algebraicPositions)
     })
   })
 })

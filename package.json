@@ -20,6 +20,7 @@
     "@types/helmet": "0.0.45",
     "@types/jest": "^25.1.3",
     "@types/node": "^13.7.7",
+    "@types/supertest": "^2.0.8",
     "@types/underscore": "^1.9.4",
     "@types/webpack": "^4.41.7",
     "@types/webpack-node-externals": "^1.7.1",
@@ -35,6 +36,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
@@ -43,7 +45,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "start": "node dist/index",
     "webpack": "webpack --config webpack.config.ts"
   },
