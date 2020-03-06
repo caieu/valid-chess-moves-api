@@ -8,8 +8,9 @@ describe('Server', () => {
   beforeAll(() => {
     it('should have a env variable PORT', () => {
       expect(process.env.PORT).toBeDefined()
+      expect(process.env.TEST_PORT).toBeDefined()
     })
-    server = app.listen(process.env.PORT)
+    server = app.listen(process.env.TEST_PORT)
     request = supertest(server)
   })
   it('should return a status code 200', () => {
