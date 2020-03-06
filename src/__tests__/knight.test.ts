@@ -11,12 +11,19 @@ describe('Knight Service', () => {
     expect(response).toHaveProperty('positions')
     expect(Array.isArray(response.positions)).toBe(true)
   })
-  test('must throw a error for non valid algebraic position', () => {
-    const request: ValidMovesRequest = { position: 'M9' }
+  it('must throw a error for non valid algebraic position', () => {
+    const request: ValidMovesRequest = { position: 'M99' }
     try {
       Knight.ValidMoves(request)
     } catch (e) {
       expect(e.message).toBe('INVALID_POSITION')
+    }
+  })
+  it('must throw a error for request without position', () => {
+    try {
+      Knight.ValidMoves({ position: '' })
+    } catch (e) {
+      expect(e.message).toBe('POSITION_NOT_FOUND')
     }
   })
 })
