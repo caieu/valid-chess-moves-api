@@ -1,6 +1,7 @@
 import app from './app'
 
 if (!process.env.PORT) {
+  console.log('PORT ENV VARIABLE NOT FOUND')
   process.exit(1)
 }
 const PORT: number = parseInt(process.env.PORT as string, 10)

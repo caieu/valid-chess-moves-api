@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import MovesFinder from '../common/MovesFinder'
 import ValidMovesResponse from '../common/ValidMovesResponse'
-import Knight from '../services/knight'
+import Knight from '../services/Knight'
 
 const routes = Router()
 
