@@ -23,6 +23,7 @@ describe('Move model', () => {
 
   it('Should save a Move', async () => {
     const move: Move = await new MoveModel({
+      piece: 'knight',
       turns: 1,
       position: 'A',
       positions: ['B3', 'C2']
