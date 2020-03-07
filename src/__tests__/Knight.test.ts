@@ -1,4 +1,4 @@
-import Knight from '../services/knight'
+import Knight from '../services/Knight'
 import ValidMovesRequest from '../common/ValidMovesRequest'
 
 describe('Knight Service', () => {
