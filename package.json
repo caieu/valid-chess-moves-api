@@ -55,7 +55,7 @@
     "test": "jest --detectOpenHandles",
     "start": "node dist/index",
     "webpack": "webpack --config webpack.config.ts",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.ts"
   },
   "repository": {
     "type": "git",
